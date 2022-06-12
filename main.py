@@ -22,7 +22,7 @@ async def read_items(request : Request):
 
 #Create the prediction
 @app.post("/result")
-async def create_upload_file(request : Request, upload_image: UploadFile = File(...)):
+async def make_prediction(request : Request, upload_image: UploadFile = File(...)):
 
     # Read the uploaded image
     contents = await upload_image.read()
