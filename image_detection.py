@@ -133,26 +133,23 @@ x_resize = np.expand_dims(x,axis=0)
 img_pred=np.argmax(model.predict(x_resize), axis=1)
 
 # Print the result
-if(img_pred==0):
-    print("Airplane")
-elif(img_pred ==1):
-    print("Automobile")
-elif(img_pred ==2):
-    print("Bird")
-elif(img_pred ==3):
-    print("Cat")
-elif(img_pred ==4):
-    print("Deer")
-elif(img_pred ==5):
-    print("Dog")
-elif(img_pred ==6):
-    print("Frog")
-elif(img_pred ==7):
-    print("Horse")
-elif(img_pred ==8):
-    print("Ship")
-elif(img_pred ==9):
-    print("Truck")
+# Create a dict with the keys and values
+dict_img = {
+    0 : "Airplane",
+    1 : "Automobile",
+    2 : "Bird",
+    3 : "Cat",
+    4 : "Deer",
+    5 : "Dog",
+    6 : "Frog",
+    7 : "Horse",
+    8 : "Ship",
+    9 : "Truck"
+}
+
+# Find the label of the prediction
+result_pred =  [value for key, value in dict_img.items() if img_pred == key][0]
+print(result_pred)
 
 
 
