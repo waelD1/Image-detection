@@ -16,7 +16,6 @@ import matplotlib.pyplot as plt
 import cv2
 from sklearn.metrics import classification_report
 from tensorflow.keras.preprocessing import image
-# One hot label encoding
 from tensorflow.keras.utils import to_categorical
 
 
@@ -40,11 +39,11 @@ def resize_img(img):
         new_array[i] = cv2.resize(img[i,:,:,:],(48,48))
     return new_array
 
-# Resize the training set
+# Resize the training and test sets
 X_train = resize_img(X_train)
 X_test = resize_img(X_test)
-print("New shape of x_train is ",X_train.shape)
-print("New shape of x_test  is ",X_test.shape)
+print("New shape of X_train is ",X_train.shape)
+print("New shape of X_test  is ",X_test.shape)
 
 # One hot encoding of the target features
 y_train = to_categorical(y_train,num_classes=10)
@@ -111,7 +110,7 @@ plt.show()
 y_pred = model.predict(X_test)
 y_pred = np.round(y_pred).astype(int)
 
-#Classification metrics and evluation of the model
+#Classification metrics and evaluation of the model
 print(classification_report(y_test, y_pred))
 print((model.evaluate(X_test, y_test, return_dict=True)))
 
@@ -120,6 +119,7 @@ print((model.evaluate(X_test, y_test, return_dict=True)))
 
 
 # Make a prediction
+
 # Load the image
 img=image.load_img('my_image.jpg',target_size=(48,48))
 

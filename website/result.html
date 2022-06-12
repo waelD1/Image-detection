@@ -15,7 +15,7 @@
       color: white;
       font-size: 60px;
     }
-    .transaction {
+    .prediction_text {
       position: fixed;
       top: 50%;
       left: 40%;
@@ -27,15 +27,13 @@
       text-align: center;
     }
     </style>
-</head>
 
+<!--Return the result of the prediction with Jinja2-->
+</head>
 <body>
     <div class = header> Result of the image classification </div>
-    <div class = transaction> We predict that the image represents a(n) : 
-      <h1 class = pred>{{ prediction }} </h1> 
-      
-      
+    <div class = prediction_text> We predict that the image represents a(n) : 
+        <h1 class = pred>{{ prediction }} </h1> 
     </div>
-
 </body>
 </html>

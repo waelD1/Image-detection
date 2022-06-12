@@ -1,16 +1,17 @@
+# Import libraries
 from PIL import Image
 from io import BytesIO
 import numpy as np
 from tensorflow.keras.models import load_model
 
 
-
+# Decoding image
 def read_imagefile(file):
     #decode the image for the model
     bytes_image = Image.open(BytesIO(file))
     return bytes_image
 
-
+# Prediction function
 def image_prediction(my_image):
 
     # First we load the model saved with Keras model.save()
