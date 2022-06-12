@@ -1,4 +1,4 @@
-# import the libraries as shown below
+# Import libraries
 
 from tensorflow.keras import datasets, optimizers, losses, callbacks
 from tensorflow.keras.layers import Input, Lambda, Dense, Flatten,Conv2D
